@@ -48,6 +48,39 @@ This project focuses on:
 
 ---
 
+## Mathematical Formulation
+
+Logistic Regression hypothesis:
+
+h(x) = σ(wᵀx + b)
+
+Loss function (Binary Cross-Entropy):
+
+L = -[y log(h(x)) + (1 - y) log(1 - h(x))]
+
+Parameters are optimized using gradient descent:
+
+w := w - α ∂L/∂w
+b := b - α ∂L/∂b
+
+---
+
+## Computational Complexity
+
+Logistic Regression:
+- Training: O(n · d · iterations)
+- Inference: O(d)
+
+K-Nearest Neighbors:
+- Training: O(1)
+- Inference: O(n · d)
+
+Where:
+n = number of samples
+d = number of features
+
+---
+
 ## Technical Approach
 
 Each algorithm follows a structured implementation pipeline:
