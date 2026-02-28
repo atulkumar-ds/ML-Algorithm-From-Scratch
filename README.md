@@ -100,13 +100,19 @@ All mathematical steps are implemented explicitly to ensure transparency and ful
 
 ## Project Structure
 
+```text
 ML-Algorithm-From-Scratch/
 │
 ├── Logistic_Regression.ipynb
 ├── Gradient_Descent.ipynb
 ├── Knn.ipynb
-├── datasets (.csv files)
+├── big_logistic_regression_dataset.csv
+├── gradient_descent_large_dataset.csv
+├── knn_200_dataset.csv
+├── knn_large_dataset.csv
+├── .gitignore
 └── README.md
+```
 
 ---
 
