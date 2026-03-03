@@ -46,6 +46,14 @@ This project focuses on:
 - Manual prediction pipeline
 - Accuracy evaluation without external ML libraries
 
+### Gaussian Naive Bayes
+- Probabilistic classification model
+- Assumes feature independence
+- Gaussian likelihood estimation
+- Log-probability computation for numerical stability
+- Manual prior and likelihood calculation
+- Compared performance with sklearn GaussianNB
+
 ---
 
 ## Mathematical Formulation
@@ -62,6 +70,20 @@ Parameters are optimized using gradient descent:
 
 w := w - α ∂L/∂w
 b := b - α ∂L/∂b
+
+### Naive Bayes (Gaussian)
+
+Posterior probability:
+
+P(C | X) ∝ P(X | C) P(C)
+
+Gaussian likelihood:
+
+P(x_i | C) = (1 / √(2πσ²)) * exp( - (x - μ)² / (2σ²) )
+
+Log posterior used for numerical stability:
+
+log P(C | X) = log P(C) + Σ log P(x_i | C)
 
 ---
 
@@ -106,10 +128,14 @@ ML-Algorithm-From-Scratch/
 ├── Logistic_Regression.ipynb
 ├── Gradient_Descent.ipynb
 ├── Knn.ipynb
+├── NaiveBayes.ipynb
+│
 ├── big_logistic_regression_dataset.csv
 ├── gradient_descent_large_dataset.csv
 ├── knn_200_dataset.csv
 ├── knn_large_dataset.csv
+├── naive_bayes_100k_dataset.csv
+│
 ├── .gitignore
 └── README.md
 ```
@@ -129,7 +155,6 @@ ML-Algorithm-From-Scratch/
 
 - Linear Regression with L1/L2 regularization
 - Decision Tree (CART) implementation
-- Naive Bayes classifier
 - Performance benchmarking against scikit-learn
 - Refactoring notebooks into modular Python scripts
 - Adding unit tests and benchmarking support
